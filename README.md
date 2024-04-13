@@ -13,7 +13,7 @@ efficiency and quality of food crops
 
 # Implementation Diagram
 
-![image](https://user-images.githubusercontent.com/75557390/177080826-73bab1a5-a54f-42ac-9139-a35379a05069.png)
+![image](photo/flowchart.png)
 
 ![ai](photo/first.png)
 
