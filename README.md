@@ -2,14 +2,9 @@
 
 # Problem Statement:
 
-Food demand is expected to be 350 million tonnes by 2030 and we are currently
-producing 291.95 million tonnes ( 2019-20 ).
+World cereal equivalent (CE) food demand is projected to be around 10,094 million tons in 2030 and 14,886 million tons in 2050, while its production is projected to be 10,120 million tons in 2030 and 15,970 million tons in 2050 having a marginal surplus.
 
-Average crop productivity in our
-country is low due to lack of infrastructure and proper supply chains.
-
-In Agriculture, there is a great potential for AI and ML systems to improve the
-efficiency and quality of food crops
+India and China are capturing large share of global food demand.
 
 # Implementation Diagram
 
@@ -65,8 +60,6 @@ Based on data given, output box is displayed on screen having details such as
 
 ● Dosage for crops
 
-![image](https://user-images.githubusercontent.com/75557390/177081191-75625ebd-a530-45f8-b1e1-e6fd9a6b1aa7.png)
-
 # Price Prediction
 
 Each year, the Government releases a price index called WPI (Wholesale price
@@ -84,8 +77,6 @@ the
 ● average predicted price
 
 ● minimum price
-
-![image](https://user-images.githubusercontent.com/75557390/177081312-f6b705c2-d7e1-4221-93c9-fde0de61f52d.png)
 
 Graph is also plotted. Left graph shows the projected price while the right graph
 shows the history of the crop prices from 2012 to 2019.
@@ -114,8 +105,6 @@ On Clicking on the 'Read Full Article' button, the user is directed to the web p
 from where the news was fetched from.
 
 # Marketplace
-
-
 
 Farmers can directly contact the sellers and hence can save on money and can
 maximize profits.
