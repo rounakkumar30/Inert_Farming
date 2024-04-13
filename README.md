@@ -111,7 +111,7 @@ maximize profits.
 He/She has to enter details such as crop to be sold, asking price,
 quantity and contact details and these details can be forwarded to the sellers.
 
-#Working of the project
+# Working of the project
 
 Steps : 
 1. Instll all the Requiremnt modules present in the requirement.text 
@@ -119,7 +119,7 @@ Steps :
 3. Check for all the required pickle files after running the notebook files 
 4. Run app.py 
 
-References:
+# References:
 
 ● Crop yield prediction using machine learning algorithms - International
 Journal of Recent Technology and Engineering (IJRTE)
