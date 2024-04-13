@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/22cf154747.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/images/index.css" />
+    <script src="../static/images/cities.js"></script>
+    <title>Fertilizer</title>
+</head>
+
+<style>
+    h3 {
+        text-align: center;
+    }
+</style>
+
+<body>
+    {% include 'nav.html' %}
+    <div class="container mx-auto ">
+        <div class="row">
+            <div class="col-sm  py-md-3">
+                <div class="card card-body" style="justify-content: center; background-color:#0eb10e21; border: 6px solid #00800042;">
+                    <p class="text-center" style="color: black; font-size: 20px;    line-height: 3.6rem; ">{{ recommendation }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <img src="../static/images/bg1.svg" class="bg" alt="" srcset="" />
+
+    <section>
+        <div class="crop-title">
+            <div class="t1 my-5">
+                <h3>Predict Best Fertilizer for Crops</h3>
+            </div>
+        </div>
+        <h3><b>{{prediction_text}}</b></h3>
+        <form method="POST" action="/fertilizer">
+            <div class="main-form">
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Moisture:</label>
+                    <input type="text" class="form-control" id="" placeholder="Lies Between 30-150" name="moisture" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Nitrogen(N):</label>
+                    <input type="text" class="form-control" id="" placeholder="Lies Between 30-150" name="Nitrogen" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Potasium(K):</label>
+                    <input type="text" class="form-control" id="" placeholder="Lies Between 30-150" name="Potassium" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Phosphorous:</label>
+                    <input type="text" class="form-control" id="" placeholder="Lies Between 30-150" name="Phosphorous" />
+                </div>
+                <div class="form-group">
+                    <label for="State">State:</label>
+                    <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control" required></select>
+                </div>
+                <div class="form-group">
+                    <label for="City">City:</label>
+                    <select id="state" class="form-control" name="city" required></select>
+                    <script language="javascript">
+                        print_state("sts");
+                    </script>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Crop Type:</label>
+                    <select name="croptype">
+              <option value="">Wheat</option>
+              <option value="">Barley</option>
+              <option value="">Cotton</option>
+              <option value="">Ground Nuts</option>
+              <option value="">Maize</option>
+              <option value="">Millets</option>
+              <option value="">Oil seeds</option>
+              <option value="">Paddy</option>
+              <option value="">Pulses</option>
+              <option value="">Sugarcane</option>
+              <option value="">Tobacco</option>
+              <option value=""></option>
+            </select>
+                    <!-- <input type="text" class="form-control" id="" placeholder="Lies Between 300-750"> -->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Soil Type:</label>
+                    <select name="soiltype">
+              <option value="">Black</option>
+              <option value="">Claley</option>
+              <option value="">Loamy</option>
+
+              <option value="">Red</option>
+              <option value="">Sandy</option>
+            </select>
+                    <!-- <input type="text" class="form-control" id="" placeholder="Lies Between 300-750"> -->
+                </div>
+            </div>
+
+            <div class="btns">
+                <button type="submit" class="btn-secondary1">Predict</button>
+                <button type="Reset" class="btn-secondary1">Reset</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

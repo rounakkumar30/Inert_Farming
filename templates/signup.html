@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/22cf154747.js" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/22cf154747.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="./index.css"> -->
+    <title>Register</title>
+  </head>
+  <style>
+    .form-group {
+      font-size: 1.2rem;
+      margin: 18px 0;
+    }
+    label{
+        margin-right: 14px
+    }
+    a{
+      text-decoration: none;
+    }
+    input {
+      outline: none;
+      border: none;
+      border-bottom: 1px solid black;width: 70%;
+      padding: 6px;
+      font-size: 1rem;
+    }
+    .btn {
+      width: fit-content;
+    }
+    .btn-class {
+      gap: 8%;
+    }
+    .main-login {
+      width: 73%;
+      height: 40%;
+      /* border: 1px solid; */
+      width: 72%;
+    /* border: 1px solid; */
+    box-shadow: 1px 1px 21px 7px #00000024;
+    border-radius: 15px;
+}
+    
+    .header-left-side2 {
+      padding: 1.2rem 4rem 1rem 6rem;
+    }
+    .btn-secondary1,
+    .bg-secondary {
+      background: linear-gradient(90deg, #0dbc3b 0%, #00ef9fd6 107.05%);
+      color: var(--text-light-color);
+      position: relative;
+      margin-top: 2%;
+      padding: 10px 30px;
+      /* font-weight: 400; */
+      outline: none;
+      border: none;
+      width: 50%;
+      cursor: pointer;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      /* font-weight: 700; */
+      color: #fff;
+      font-size: 1.3rem;
+    }
+    .divider {
+      width: 11rem;
+      height: 5px;
+      /* margin-bottom: 2rem; */
+      background: linear-gradient(90deg, #00e97b 0%, #00b7bb 107.05%);
+    }
+    h4{
+        margin-top: 2rem;
+        text-align: center;
+    }
+    .link-img{
+      height: 100%;
+    width: 13%;
+    }
+    .links{
+        margin-top: 2rem;
+        /* margin: auto; */
+        display: flex;
+    flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .li{
+      color: blue;
+    text-align: center;
+    font-size: 1.5rem;
+    /* margin: 21px; */
+    margin-top: 1rem;
+    cursor: pointer;
+    }
+    .bg {
+    position: absolute;
+    width: 50%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+@media (max-width:600px){
+.main-login{
+  text-align: center;
+  box-shadow: none;
+  width: 100%;
+}
+.divider{
+  margin: auto;
+}
+.input{
+  text-align: center;
+}
+.d-flex{
+  justify-content: center
+}
+.header-left-side2 {
+      padding: 0;
+}
+input{
+  text-align: center;
+  background: transparent;
+}
+.btn-secondary1{
+  padding: 10px 16px;
+    /* font-weight: 400; */
+    outline: none;
+    border: none;
+    width: 34%;
+}
+
+  
+}
+  </style>
+  <body>
+    <img src="../static/images/bg1.svg" class="bg" alt="" srcset="">
+
+    <section id="ser3">
+      {% if msg  %}
+      <div class="alert mt-3 alert-warning alert-dismissible fade show" role="alert" style="width: 80%; margin: auto;">
+        <strong>{{msg}}</strong> Please use another Email Address  
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      
+      {% else %}
+
+      {% endif %}
+      <div class="container main-login py-4 mt-5">
+        <div class="row crop-main">
+          <div
+          class="col-12 col-lg-6 header-left-side2 d-flex justify-content-center flex-column"
+        ><form action="/signup" method="POST">
+          <h1>Signup</h1>
+          <div class="divider"></div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-user"></i></label>
+            <input type="text" name="uname" id="" placeholder="Your Name" />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-envelope"></i></label>
+            <input type="text" name="email" id="" placeholder="Your EmailId" />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-phone-alt"></i></label>
+            <input type="text" name="phone" id="" placeholder="Your phonenumber" />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-leaf"></i></i></label>
+            <input type="text" name="profession" id="" placeholder="Enter Profession" />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-lock"></i></label>
+            <input type="password" name="password" id="" placeholder="Enter Password" />
+          </div>
+          <div class="form-group">
+            <label for=""><i class="fas fa-lock"></i></label>
+            <input type="password" name="rpassword" id="" placeholder="Conform your Password" />
+          </div>
+          <div class="btn-class d-flex">
+            <button type="submit" class="btn-secondary1">Signup &nbsp;<i class="fas fa-arrow-right"></i></button>
+            <button type="reset" class="btn-secondary1">Reset</button>
+          </div>
+
+         <a href="/"><div class="li">Back to Home Page
+          </div></a> 
+      </form>
+        </div>
+            <div
+            class="col-12 col-lg-6 header-right-side d-flex justify-content-center flex-column"
+          >
+            <img
+              src="../static/images/Untitled-3.png"
+              class="img-fluid crop"
+              alt=""
+              srcset=""
+            />
+            <a  href="/login"><div class="li">Already Registered? Login in
+            </div>
+          </a>
+            <!--  -->
+          </div>
+
+       
+
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

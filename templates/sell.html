@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketing Potral</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/22cf154747.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../static/images/index.css" />
+    <style>
+      /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+      body {
+        font-family: "Poppins", sans-serif !important;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+
+      .card1 {
+        display: flex;
+        flex-direction: row;
+        margin: 3rem 10rem;
+        /* border: 1px solid #00000070; */
+        box-shadow: 1px 1px 8px -1px #0000002e;
+        padding: 22px 0;
+      }
+      .img-fluid4 {
+        width: 30%;
+        padding: 2rem;
+        width: 22%;
+        height: 7%;
+        padding: 2rem;
+        margin: auto;
+      }
+      .card-body a {
+        list-style: none;
+      }
+      .ll {
+        width: 20% !important;
+        background: linear-gradient(
+          90deg,
+          #ac2bc4 0%,
+          #5c98bfd6 107.05%
+        ) !important;
+        padding: 10px !important;
+      }
+      .card-title {
+        font-size: 1.7rem;
+        margin-bottom: 0.5rem;
+      }
+      .btn-secondary1 {
+        width: 20%;
+        padding: 10px;
+      }
+      .hh {
+        line-height: 3rem;
+        font-weight: 700;
+        text-align: center;
+        font-size: 1.6rem;
+        color: #1951a8;
+        text-shadow: 1px 2px 8px #00000014;
+      }
+      label {
+        width: 20% !important;
+        margin-top: 2rem !important;
+        font-size: 1.1rem !important;
+      }
+      .content {
+        margin-left: 8rem;
+      }
+      .form-control:focus {
+        outline: none;
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        border-bottom: 1px solid #000000bd;
+      }
+
+      .form-group {
+        gap: 1% !important;
+        width: 50% !important;
+      }
+      input[type="text"] {
+        margin: 1.4rem 0 0 !important;
+        font-size: 1.1rem !important;
+        font-weight: 400 !important;
+      }
+      .btns {
+        width: 62% !important;
+        gap: 10% !important;
+      }
+      .bg-light {
+        box-shadow: 1px 1px 5px -2px #0000003b;
+        background-color: #fff !important;
+      }
+      @media (max-width: 600px) {
+        .card1 {
+          display: flex;
+          flex-direction: column;
+          margin: 1rem 1rem;
+          /* border: 1px solid #00000070; */
+          box-shadow: 1px 1px 8px -1px #0000002e;
+          padding: 0px 0;
+        }
+        .ll {
+          width: 49% !important;
+          /* margin-left: 5rem !important; */
+        }
+        .l2 {
+          /* width: 49% !important; */
+          margin-left: 5rem !important;
+        }
+        .card-title {
+          font-size: 1.2rem;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+        .card-body p {
+          display: none !important;
+        }
+        .d-flex{
+          justify-content: center !important;
+        }
+        .img-fluid4 {
+          width: 30%;
+          padding: 3rem;
+          width:52%;
+          height: 8%;
+          padding: 2rem;
+          margin: auto;
+        }
+        .form-group{
+          width: 80% !important;
+          display: flex;
+    flex-direction: column;
+        }
+        label {
+          width: 100% !important;
+    margin-top: 0.7rem  !important;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+input[type='text'] {
+  margin: 1rem 0 !important;
+    font-size: 1rem;
+    width: 100% !important;
+}
+.hh{
+  font-size: 1.2rem;
+
+}
+
+
+.content{
+  margin-left: 0;
+}
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include 'nav.html' %}
+    <h3 class="hh">
+      Say No More To Middle Man Dealers!!! <br />
+      Sell Your crops directly to the Companies & Consumers
+    </h3>
+    <a style="text-decoration: none" href="/"
+      ><h3
+        style="
+          color: blue;
+          text-align: center;
+          list-style: none;
+          font-size: 1rem;
+        "
+      >
+        Back To Home Page
+      </h3></a
+    >
+    <img src="../static/images/bg1.svg" class="bg" alt="" srcset="" />
+    <section>
+      <div class="container my-5">
+        <section id="steps">
+          <div class="text-center mb-5">
+            <span>STEPS</span>
+            <h2 class="font-weight-bold display-4">
+              How Can You <span style="color: #9b5de5">Sell Your Crops?</span>
+            </h2>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="bg-light position-relative px-3 my-5">
+                <div
+                  class="font-weight-bold circle text-white rounded-circle d-flex1 align-items-center justify-content-center mx-auto position-relative border border-white"
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    top: -30px;
+                    display: flex;
+                    border-width: 4px !important;
+                    background-color: #9b5de5;
+                  "
+                >
+                  1
+                </div>
+                <div class="px-3 text-center pb-3">
+                  <h5>Login/Signup To AIFarming Website</h5>
+                  <p class="font-weight-light my-3">
+                    Login / Signup to AIFarming to precieve the knowledge An
+                    Innovate way of Farming to new World
+                  </p>
+                  <a href="/login"><h5>Login</h5></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-light position-relative px-3 my-5">
+                <div
+                  class="font-weight-bold circle text-white rounded-circle d-flex1 align-items-center justify-content-center mx-auto position-relative border border-white"
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    top: -30px;
+                    display: flex;
+                    border-width: 4px !important;
+                    background-color: #9b5de5;
+                  "
+                >
+                  2
+                </div>
+                <div class="px-3 text-center pb-3">
+                  <h5>Fill Up Form about your crop production</h5>
+                  <p class="font-weight-light my-3">
+                    Lorem ipsum dolor sit consectetur adipisicing elit. Alias
+                    amet deleniti et fugit iusto nesciunt.
+                  </p>
+                  <a href="/form"><h5>Links</h5></a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="bg-light position-relative px-3 my-5">
+                <div
+                  class="font-weight-bold circle text-white rounded-circle d-flex1 align-items-center justify-content-center mx-auto position-relative border border-white"
+                  style="
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    top: -30px;
+                    border-width: 4px !important;
+                    background-color: #9b5de5;
+                  "
+                >
+                  3
+                </div>
+                <div class="px-3 text-center pb-3">
+                  <h5>
+                    Companies According to the need will ask for your crop
+                  </h5>
+                  <p class="font-weight-light my-3">
+                    Lorem ipsum dolor sit consectetur adipisicing elit. Alias
+                    amet deleniti et fugit iusto nesciunt.
+                  </p>
+                  <a href="#form"><h5>Fill the form</h5></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <div class="card1" style="">
+      <img src="../static/images/Adani .png" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Adani FoodCoopartion</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="https://www.adani.com/businesses/edible-oil-and-food-products"><button  class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img
+        src="../static/images/Britannia Industries Logo.png"
+        class="img-fluid4"
+        alt="..."
+      />
+      <div class="card-body">
+        <h5 class="card-title">Britannia Industries</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="http://britannia.co.in/"><button  class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/dmart.png" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Dmart Industries</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="https://www.dmartindia.com/"><button  class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/bgb.png" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Big-Basket</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="https://www.bigbasket.com/"><button href="https://www.bigbasket.com/" class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/fortune.jpg" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Fortune Industries</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="https://www.fortunefoods.com/"><button  class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/rice.png" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Rice Crop</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <button href="#" class="btn-secondary1 ll l2">Visit Page</button>
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/kohinoor.png" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Kohinoor Foods</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+       <a href="https://www.kohinoorfoods.in/"><button  class="btn-secondary1 ll l2">Visit Page</button></a> 
+      </div>
+    </div>
+    <div class="card1" style="">
+      <img src="../static/images/kisan.webp" class="img-fluid4" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">Kissan Group</h5>
+        <div
+          class="mb-4 mt-0 d-inline-block mx-auto"
+          style="width: 170px; background-color: #00e97f; height: 3px"
+        ></div>
+
+        <p class="card-text">
+          Adani Agri Logistics Limited (AALL) has signed an exclusive service
+          agreement with the Food Corporation of India. The project has been
+          implemented at a total cost of nearly Rs. 700 crores. Some quick
+          example text to build on the card title and make up the bulk of the
+          card's content.
+        </p>
+        <a href="https://www.kissan.in/"><button  class="btn-secondary1 ll l2">Visit Page</button></a>
+      </div>
+    </div>
+
+    <form action="/sell" method="POST" id="form">
+      <h3 style="text-align: center">Fill Out This Form To sell Your Crops</h3>
+      <div class="form-group">
+        <label for="">First Name</label>
+
+        <input type="text" class="form-control" placeholder="Your First Name" name="fname"/>
+        <label class="la" for="">Last Name</label>
+        <input type="text" class="form-control" placeholder="Your Last Name" name="lname" />
+      </div>
+      <div class="content">
+        <div class="form-group">
+          <label class="la" for="">Email Address</label>
+          <input type="text" class="form-control" placeholder="Email"name="email" />
+        </div>
+        <div class="form-group">
+          <label class="la" for="">Phone number</label>
+          <input type="text" class="form-control" placeholder="Phone nUmber"name="phone" />
+        </div>
+        <div class="form-group">
+          <label class="la" for="">Address</label>
+          <input type="text" class="form-control" placeholder="address" name="add" />
+        </div>
+        <div class="form-group">
+          <label class="la" for="">Crop Type</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter crop type"
+            name="ctype"
+          />
+        </div>
+        <div class="form-group">
+          <label class="la" for="">Quantity</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Quantity of Production"
+            name="Quantity"
+          />
+        </div>
+        <div class="form-group">
+          <label class="la" for="">Crop Name</label>
+          <input type="text" class="form-control" placeholder="Crop Name" name="cname"/>
+        </div>
+        <div class="form-group">
+          <label class="la" for="">MSP</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder=" MIN Selling Price"
+            name="msp"
+          />
+        </div>
+      </div>
+      <div class="btns">
+        <button type="submit" class="btn-secondary1 ll">Submit</button>
+        <button href="#" class="btn-secondary1 ll">Reset</button>
+      </div>
+    </form>
+  </body>
+</html>

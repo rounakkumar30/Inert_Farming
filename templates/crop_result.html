@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+
+    <img src="../static/images/bg1.svg" class="bg" alt="" srcset="">
+
+    <section>
+        <div class="crop-title">
+            {% if prediction_text %}
+            <div class="container mx-auto ">
+                <div class="row">
+                    <div class="col-sm  py-md-3">
+                        <div class="card card-body" style="justify-content: center; background-color:#0eb10e21; border: 6px solid #00800042;">
+                            <h1>Crop Prediction Result</h1>
+                            <p><strong>Prediction Text:</strong> {{ prediction_text }}</p>
+                            <p><strong>Yield Value:</strong> {{ yield_value }} per/hectare</p>
+                            <p><strong>Growing Season:</strong> {{ growing_season }}</p>
+                            <p><strong>Pests and Diseases:</strong> {{ pests_and_diseases }}</p>
+                            <p><strong>Varieties:</strong> {{ varieties }}</p>
+                            <p><strong>Prices:</strong> {{ prices }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+</body>
+
+</html>

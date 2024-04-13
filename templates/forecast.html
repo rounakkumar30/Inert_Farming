@@ -1,0 +1,232 @@
+<!doctype html>
+<title>Price Centre</title>
+<html>
+ 
+<style>
+ @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+} 
+.styled-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin: auto;
+    width: 60vw;
+    /* font-size: 2rem; */
+}
+thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+ tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+.hh{
+    line-height: 3rem;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #1951a8;
+    text-shadow: 1px 2px 8px #00000014;
+}
+.grahs{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+align-content: stretch;
+justify-content: space-evenly;
+}
+.information{
+    text-align: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-style: oblique;
+    font-weight: lighter;
+    width: 59%;
+    margin: 3rem auto;
+    padding: 2rem 0;
+    box-shadow: -1px 1px 22px 7px #0000000d;
+ }
+        
+.btn-secondary1,
+.bg-secondary {
+    background: linear-gradient( 90deg, #0dbc3b 0%, #00ef9fd6 107.05%);
+    color: var(--text-light-color);
+    position: relative;
+    margin-top: 2%;
+    padding: 14px 40px;
+    font-weight: 400;
+    outline: none;
+    border: none;
+    width: 40%;
+    cursor: pointer;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+}
+.btns{
+    margin: 2rem auto;
+    justify-content: center;
+    width: 33%;
+    gap: 15%;
+    display: flex;
+}
+.form-group select {
+    border: none;
+    background: transparent;
+    padding: 1% 0;
+    /* margin: 2% 0; */
+    border-bottom: 1px solid #000000bd;
+    border-radius: 0%;
+    margin: 2rem 0 0;
+    width: 50%;
+    text-align: center;
+    font-weight: 700;
+    color: #0000009c;
+    font-size: 1.2rem;
+    outline: none;
+    
+}
+label {
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 40%;
+}
+.form-group {
+    width: 40%;
+    display: flex;
+    margin: auto;
+    border: none;
+    gap: 5%;
+}
+strong{
+    color: blue;
+}
+rect{
+    fill: rgb(234 238 244) !important;
+    fill-opacity: 1;
+    stroke-width: 0;
+    width: 620px !important;
+
+}
+@media (max-width:600px) {
+   .information{ width: 95%;}
+}
+    </style>
+    <!-- <link rel="stylesheet" href="../static/images/index.css"> -->
+<body >
+    {% include 'nav.html' %}
+    <!-- <h1>{{header}}</h1> -->
+    <h2 class="hh">Crop Price Prediction for 2020-2023 Using Forecating</h2>
+    <a style="text-decoration:none;"  href="/"><h5 style="      color: blue;
+        text-align: center; list-style: none;">Back To Home Page</h5></a>
+    <form method="POST" action="/forecast">
+        <div class="main-form">
+            <div class="form-group">
+               <label for="exampleInputPassword1">Crop Type:</label>
+                <select name="croptype">
+              <option value="arhar">arhar</option>
+              <option value="bajra">bajra</option>
+              <option value="barley">barley</option>
+              <option value="copra">copra</option>
+              <option value="cotton">cotton</option>
+              <option value="sesamum">sesamum</option>
+              <option value="gram">gram</option>
+              <option value="groundnut">groundnut</option>
+              <option value="jowar">jowar</option>
+              <option value="maize">maize</option>
+              <option value="masoor">masoor</option>
+              <option value="moong">moong</option>
+              <option value="niger">niger</option>
+              <option value="paddy">paddy</option>
+              <option value="raggi">ragi</option>
+              <option value="rape">rape</option>
+              <option value="jute">jute</option>
+              <option value="safflower">safflower</option>
+              <option value="soyabean">soyabean</option>
+              <option value="sunflower">sunflower</option>
+              <option value="urad">urad</option>
+              <option value="wheat">wheat</option>
+               </select>
+               <!-- <input type="text" class="form-control" id="" placeholder="Lies Between 300-750"> -->
+            </div>
+        </div>
+
+    </div>
+    <div class="btns" style="">
+    <button type="submit" class="btn-secondary1">Predict</button>
+    <button type="Reset" class="btn-secondary1">Reset</button>
+    </div>
+</form>
+
+<div class="information">
+    <h2>Predicted Value for  Crop<strong>: {{cropanme}}</strong></h2>
+    <p>Max Price  : <strong>&#x20B9; {{max}} </strong> Per Quintals</p>
+    <p>Min Price  : <strong>&#x20B9;{{min}} </strong> Per Quintals</p>
+    <p>Average : <strong>&#x20B9; {{avg}}  </strong> Per Quintals</p>
+</div>
+<div class="information">
+    <h2>Data About The Crop<strong>: {{cropanme}}</strong></h2>
+    <p>CropLocation :  {{state}}</p>
+    <p>Crop Type :   {{cropType}}</p>
+    <p>Top Exports :  {{otherCountries}}</p>
+</div>
+<div class="grahs">
+    <!-- <h6><a href="/">Return to index page</a></h6> -->
+    <div id="chart" class="chart"></div>
+    <div id="chart2" class="chart"></div>
+    <!-- <div>{{description}}</div> -->
+</div>
+
+
+
+    
+    
+{% for table in tables %}
+        
+<table class="styled-table">
+     
+        {{ table|safe }}
+        {% endfor %}    
+ </table>
+      
+      </div>
+
+
+
+
+</body>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{graphJSON | safe}};
+    Plotly.plot('chart',graphs,{});        
+    var graphs1 = {{graphJSON1 | safe}};
+    Plotly.plot('chart2',graphs1,{});        
+</script>
+</html>

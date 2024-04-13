@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Include necessary CSS and JS files -->
+</head>
+
+<body>
+    <!-- Display disease information and uploaded image -->
+    <h2>Disease Result:</h2>
+    <p>Disease: {{ disease }}</p>
+    <p>Description: {{ description }}</p>
+    <img src="{{ url_for('uploaded_file', filename=image_file) }}" alt="Uploaded Image">
+</body>
+
+</html>
