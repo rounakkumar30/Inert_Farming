@@ -13,9 +13,9 @@ efficiency and quality of food crops
 
 # Implementation Diagram
 
-![image](https://user-images.githubusercontent.com/75557390/177080826-73bab1a5-a54f-42ac-9139-a35379a05069.png)
+![image](photo/Screenshot 2024-04-13 142822.png)
 
-![ai](https://user-images.githubusercontent.com/75557390/177082128-b75a384e-973b-4f90-9a9a-814df4f8bf2f.jpeg)
+![ai](photo/first.png)
 
 # Crop Yield Prediction
 
