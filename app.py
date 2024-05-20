@@ -10,6 +10,9 @@ import io
 from datetime import datetime
 import urllib.parse
 from utils.fertilizer import fertilizer_dic
+from flask import Flask, render_template, request, redirect
+from datetime import datetime
+from mongoengine import Document, StringField, DateTimeField
 from utils.crop import crop
 import plotly.express as px
 import plotly
@@ -50,19 +53,89 @@ class users(db.Document):
     rpassword = db.StringField()
     registered_Date = db.DateTimeField(default=datetime.now)
 
+class Market(Document):
+    fname = StringField()
+    lname = StringField()
+    email = StringField()
+    phone = StringField()
+    address = StringField()
+    croptype = StringField()
+    quantity = StringField()
+    cropname = StringField()
+    msp = StringField()
+    registered_Date = DateTimeField(default=datetime.now)
 
-class Market(db1.Document):
-    fname = db1.StringField()
-    lname = db1.StringField()
-    email = db1.StringField()
-    phone = db1.StringField()
-    address = db1.StringField()
-    croptype = db1.StringField()
-    quantity = db1.StringField()
-    cropname = db1.StringField()
-    msp = db1.StringField()
-    registered_Date = db1.DateTimeField(default=datetime.now)
 
+class ContactForm(db.Document):
+    name = db.StringField(required=True)
+    email = db.EmailField(required=True)
+    message = db.StringField(required=True)
+  
+
+# Route to render the form for selling crops
+@app.route('/sell', methods=['GET'])
+def sell():
+    return render_template('sell.html')
+
+# Route to handle the form submission
+@app.route('/submit_sell_form', methods=['POST'])
+def submit_sell_form():
+    if request.method == 'POST':
+        try:
+            # Get form data
+            fname = request.form['fname']
+            lname = request.form['lname']
+            email = request.form['email']
+            phone = request.form['phone']
+            address = request.form['add']
+            croptype = request.form['ctype']
+            quantity = request.form['Quantity']
+            cropname = request.form['cname']
+            msp = request.form['msp']
+
+            # Store form data in MongoDB
+            market = Market(
+                fname=fname,
+                lname=lname,
+                email=email,
+                phone=phone,
+                address=address,
+                croptype=croptype,
+                quantity=quantity,
+                cropname=cropname,
+                msp=msp
+            )
+            market.save()
+
+            # Redirect to a success page or do something else
+            return 'Form submitted successfully!'
+
+        except Exception as e:
+            return f"An error occurred: {str(e)}"
+
+    return 'Invalid request'
+
+#Contact
+@app.route('/contact', methods=['GET'])
+def contact():
+    return render_template('contact.html')
+
+
+#Submit Function
+@app.route('/submit_contact_form', methods=['POST'])
+def submit_contact_form():
+    if request.method == 'POST':
+        name = request.form.get('name')
+        email = request.form.get('email')
+        message = request.form.get('message')
+
+        # Create a new ContactForm document and save it to MongoDB
+        contact_form = ContactForm(name=name, email=email, message=message)
+        contact_form.save()
+
+        return 'Form submitted successfully!'
+
+    return 'Invalid request'
 # Login Function
 
 
@@ -255,25 +328,23 @@ def crop():
         # Handle form submission and processing here
         
         # Retrieve form data
-        nitrogen = request.form.get('Nitrogen')
-        potassium = request.form.get('Potassium')
-        phosphorous = request.form.get('Phosphorous')
-        rainfall = request.form.get('Rainfall')
-        ph_value = request.form.get('PH')
+        Nitrogen = request.form.get('Nitrogen')
+        Potassium = request.form.get('Potassium')
+        Phosphorous = request.form.get('Phosphorous')
+        Rainfall = request.form.get('Rainfall')
+        PH = request.form.get('PH')
+        # Prepare input data as a DataFrame
         
-        # Perform calculations or prediction based on the form data
-        # For demonstration purposes, let's assume we have some prediction results
-        prediction_text = "Some prediction text"
-        yield_value = 100  # Dummy yield value
-        growing_season = "Spring"  # Dummy growing season
-        pests_and_diseases = "Some pests and diseases"  # Dummy pests and diseases
-        varieties = "Some varieties"  # Dummy varieties
-        prices = "Some prices"  # Dummy prices
-        
+        input_data = pd.DataFrame({'Nitrogen': [Nitrogen], 
+                               'Potassium': [Potassium], 
+                               'Phosphorous': [Phosphorous], 
+                               'Rainfall': [Rainfall], 
+                               'PH': [PH], 
+                               })
+        # Make prediction using the loaded model
+        prediction = model.predict(input_data)
         # Render the result template with the prediction results
-        return render_template('crop_result.html', prediction_text=prediction_text, yield_value=yield_value, 
-                               growing_season=growing_season, pests_and_diseases=pests_and_diseases, 
-                               varieties=varieties, prices=prices)
+        return render_template('crop_result.html', prediction=prediction[0])
     else:
         # If it's a GET request, render the crop form template
         return render_template('crop.html')
