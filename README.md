@@ -114,7 +114,7 @@ quantity and contact details and these details can be forwarded to the sellers.
 # Working of the project
 
 Steps : 
-1. Instll all the Requiremnt modules present in the requirement.text 
+1. Install all the Requiremnt modules present in the requirement.text 
 2. Run all the notebook file which is present in notebook folder
 3. Check for all the required pickle files after running the notebook files 
 4. Run app.py 
