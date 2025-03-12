@@ -1,133 +1,150 @@
-# INERT Farming
+# 🌾 INERT Farming
 
-# Problem Statement:
+## 📌 Problem Statement
 
-World cereal equivalent (CE) food demand is projected to be around 10,094 million tons in 2030 and 14,886 million tons in 2050, while its production is projected to be 10,120 million tons in 2030 and 15,970 million tons in 2050 having a marginal surplus.
+World cereal equivalent (CE) food demand is projected to be around **10,094 million tons in 2030** and **14,886 million tons in 2050**, while production is projected to be **10,120 million tons in 2030** and **15,970 million tons in 2050**, having a marginal surplus.
 
-India and China are capturing large share of global food demand.
+India and China are capturing a large share of global food demand, making efficient farming solutions necessary.
 
-# Implementation Diagram
+---
 
-![image](photo/flowchart.png)
+## 📊 Implementation Diagram
 
-![ai](photo/first.png)
+![Implementation Diagram](photo/flowchart.png)
 
-# Crop Yield Prediction
+![AI System](photo/first.png)
 
-It is based on following parameters:
+---
 
-● Nitrogen
+## 🌱 Crop Yield Prediction
 
-● Phosphorous
+The model predicts crop yield based on the following parameters:
 
-● State
+- **Nitrogen**
+- **Phosphorous**
+- **State**
+- **City**
+- **pH**
+- **Rainfall**
 
-● City
+📡 *State and City parameters are used to fetch weather data (temperature, rainfall, humidity) via an API call.*
 
-● pH
+The **Random Forest** algorithm is used to provide the most accurate yield predictions. The results are displayed on the screen.
 
-● Rainfall
+![Crop Yield Prediction](https://user-images.githubusercontent.com/75557390/177081039-dca86c74-da61-4364-b01a-c257f0d219ed.png)
 
-State and City parameters are used by the Weather API to get the current
-temperature, rainfall, Humidity details for the specific location.
-All these parameters are fed to the Model for prediction
-Here, the Random Forest algorithm gives us the maximum accuracy.
-Based on
-prediction, Output is displayed on screen
+---
 
-![image](https://user-images.githubusercontent.com/75557390/177081039-dca86c74-da61-4364-b01a-c257f0d219ed.png)
+## 🌾 Fertilizer Prediction
 
-# Fertilizer Prediction
+A pre-existing fertilizer dataset is used for training and testing.
 
-Existing Fertilizer dataset is used and this is used as a training and testing datasets.
-User inputs
+### 🔹 User Inputs:
+- **Nitrogen**
+- **Phosphorous**
+- **Soil Type**
 
-● Nitrogen
+🌦️ *Weather details (Temperature, Humidity, Moisture) are fetched via API calls.*
 
-● Phosphorous
+### 🔹 Output:
+- Recommended **conventional fertilizer**
+- Suggested **organic alternatives**
+- **General information** about fertilizers
+- **Dosage recommendations** for crops
 
-● Soil Type
+---
 
-Weather Details ( Temperature, Humidity, Moisture ) are fetched via API call.
+## 💰 Price Prediction
 
-Based on data given, output box is displayed on screen having details such as
+Each year, the Government releases the **Wholesale Price Index (WPI)**, which is used to estimate crop prices.
 
-● Conventional recommended fertilizer
+📈 **Formula:**  
+`Current Price = WPI * Base Price (for the ongoing year)`
 
-● Organic alternatives to this fertilizer
+Using historical data, the model predicts:
 
-● General Information
+- **Maximum price**
+- **Average predicted price**
+- **Minimum price**
 
-● Dosage for crops
+A **graph** is plotted showing:
+- **Projected crop prices** (left)
+- **Historical price trends (2012-2019)** (right)
 
-# Price Prediction
+🧠 **Model Used:** **SARIMAX** (Time series forecasting)  
+✅ Can predict prices **4-5 years into the future** with high accuracy.
 
-Each year, the Government releases a price index called WPI (Wholesale price
-Index). Wholesale price indexes are reported monthly in order to show the
-average price changes of goods.
+---
 
-To get the current price for the current year, we use the following formula
-Current price = WPI * Base Price(for the ongoing year)
+## 🌿 Crop Disease Prediction
 
-Using previous year data, predictions have been made to indicate what might be
-the
+👨‍🌾 *Farmers can upload an image of a diseased crop on the website.*  
 
-● maximum price
+🔬 **Deep Learning models** analyze the image and detect the disease, providing:
+- **Disease details**
+- **Possible causes**
+- **Recommended cure**
 
-● average predicted price
+---
 
-● minimum price
+## 📰 Farmer News Portal
 
-Graph is also plotted. Left graph shows the projected price while the right graph
-shows the history of the crop prices from 2012 to 2019.
+Farmers can stay updated with **daily agricultural news** via a web portal.
 
-Sarimax Time series forecasting model is being used for the prediction of the
-future crop prices. This model can predict prices upto 4-5 years accurately.
+- **News is dynamically fetched** from various sources using **web crawling**.
+- Clicking on **"Read Full Article"** redirects users to the original source.
 
-# Crop Disease Prediction
+---
 
-The farmer has to upload an image to the website from his/her device. Deep
-Learning models are used is to find the disease that occurred and details about
-the disease and its cure are given to the farmer.
+## 🏪 Marketplace
 
+Farmers can **sell crops directly to buyers**, reducing middlemen costs.
 
+📌 **User Inputs:**
+- **Crop name**
+- **Asking price**
+- **Quantity available**
+- **Contact details**
 
-# Farmer News
+Buyers can connect with farmers, ensuring better profits and direct sales.
 
-Farmers can stay up to date with the latest news in the agricultural domain with
-help of the news portal. The news is dynamically fetched and is updated every
-day.
+---
 
-From various sites, news is gathered via web crawling and then displayed on
-the news portal.
+## ⚙️ Project Setup & Execution
 
-On Clicking on the 'Read Full Article' button, the user is directed to the web page
-from where the news was fetched from.
+### 🔹 Steps to Run the Project:
+1. **Install dependencies**:  
+   ```sh
+   pip install -r requirements.txt
+   ```
 
-# Marketplace
+2. **Run all Jupyter notebooks** (inside the `notebook` folder) to generate model files.
 
-Farmers can directly contact the sellers and hence can save on money and can
-maximize profits.
-He/She has to enter details such as crop to be sold, asking price,
-quantity and contact details and these details can be forwarded to the sellers.
+3. **Verify required pickle files** after running the notebooks.
 
-# Working of the project
+4. **Run the application**:  
+   ```sh
+   python app.py
+   ```
 
-Steps : 
-1. Install all the Requiremnt modules present in the requirement.text 
-2. Run all the notebook file which is present in notebook folder
-3. Check for all the required pickle files after running the notebook files 
-4. Run app.py 
+---
 
-# References:
+## 📚 References
 
-● Crop yield prediction using machine learning algorithms - International
-Journal of Recent Technology and Engineering (IJRTE)
+- **Crop yield prediction using machine learning algorithms** - *International Journal of Recent Technology and Engineering (IJRTE)*
+- **Crop Condition Assessment using Machine Learning** - *International Journal of Recent Technology and Engineering (IJRTE)*
+- **Open Government Data (OGD) Platform India**
+- **Kaggle: Your Machine Learning and Data Science Community**
 
-● Crop Condition Assessment using Machine Learning - International Journal
-of Recent Technology and Engineering (IJRTE)
+---
 
-● Open Government Data (OGD) Platform India
+🚀 **Developed by [Rounak Kumar](https://github.com/rounakkumar30)**  
 
-● Kaggle: Your Machine Learning and Data Science Community
+## 📜 License
 
+This project is licensed under the **MIT License**.
+
+![MIT License](https://img.shields.io/badge/License-MIT-green.svg)
+
+---
+📌 *For any queries, feel free to raise an issue or contribute to the project!*
